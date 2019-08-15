@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  database: c8hVKN0G65
+  username: c8hVKN0G65
+  password: UMNaOH8MB0
+  host: remotemysql.com
+  port: 3306
