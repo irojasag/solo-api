@@ -1,3 +1,5 @@
-class ApplicationController < ActionController::API
-        include DeviseTokenAuth::Concerns::SetUserByToken
+class ApplicationController < ActionController::API 
+  include Response
+  include ExceptionHandler
+  include DeviseTokenAuth::Concerns::SetUserByToken
 end
