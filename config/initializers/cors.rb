@@ -15,7 +15,8 @@
 #   end
 # end
 
-Rails.application.config.middleware.use Rack::Cors do
+# Rails.application.config.middleware.use Rack::Cors do
+Rails.application.middleware.insert_before "ActionDispatch::Static", Rack::Cors do
   allow do
     origins '*'
     resource '*',
