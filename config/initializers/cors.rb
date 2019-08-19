@@ -18,12 +18,12 @@
 Rails.application.config.middleware.use Rack::Cors do
   allow do
     origins %w[
-                https://solo-web-app.herokuapp.com
-                http://solo-web-app.herokuapp.com
-                https://localhost:4201
-                https://localhost:4200
-                http://localhost:4201
-                http://localhost:4200
+                https://solo-web-app.herokuapp.com/*
+                http://solo-web-app.herokuapp.com/*
+                https://localhost:4201/*
+                https://localhost:4200/*
+                http://localhost:4201/*
+                http://localhost:4200/*
             ]
     resource '*',
     :headers => :any,
