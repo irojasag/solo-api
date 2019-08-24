@@ -19,9 +19,9 @@ Rails.application.config.middleware.use Rack::Cors do
   allow do
     origins '*'
     resource '*',
-    :headers => :any,
-    :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-    :methods => [:get, :post, :options, :delete, :put]
+      :headers => :any,
+      :expose  => %i[access-token expiry token-type uid client],
+      :methods => %i[get post options delete put]
   end
 end
 
@@ -29,7 +29,8 @@ Rails.application.config.middleware.insert_before ActionDispatch::Static, Rack::
   allow do
     origins '*'
     resource '*',
-      headers: :any,
-      methods: %i[delete get head options patch post put]
+      :headers => :any,
+      :expose  => %i[access-token expiry token-type uid client],
+      :methods => %i[get post options delete put]
   end
 end
