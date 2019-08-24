@@ -19,6 +19,6 @@ class FinanceOverviewController < ApplicationController
   end
 
   def wallet_totals
-    @wallet_totals ||= wallets.map { |wallet| {name: wallet.name, current_balance: wallet.current_balance} }
+    @wallet_totals ||= wallets.map { |wallet| { id: wallet.id, name: wallet.name, current_balance: wallet.current_balance} }
   end
 end
