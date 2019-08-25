@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
   
   # GET /transactions
   def index
-    json_response(current_user.wallets.map{|t| t.transactions}.flatten)
+    #json_response(.includes(:wallet))
+    render :json => Transaction.where(wallet: current_user.wallets.pluck(:id)), include: [:wallet]
   end
 end
