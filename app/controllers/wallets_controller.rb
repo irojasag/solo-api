@@ -27,7 +27,7 @@ class WalletsController < ApplicationController
 
   # DELETE /wallets/:id
   def destroy
-    @wallet.destroy
+    return json_response(@wallet.errors) unless @wallet.destroy
     head :no_content
   end
 
